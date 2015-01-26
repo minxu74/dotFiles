@@ -171,16 +171,20 @@ nnoremap <Leader>sp :Grep<CR>
 nnoremap <Leader>gs <C-W><C-W>
 
 "latexsuite settings
-let g:Tex_DefaultTargetFormat = 'ps'
-let g:Tex_MultipleCompileFormats = 'ps'
-"let g:Tex_ComplieRule_pdf = 'pdflatex --interaction=nonstopmode $*'
-"let g:Tex_ComplieRule_dvi = 'latex --interaction=nonstopmode $*'
-"let g:Tex_ComplieRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
+"let g:Tex_DefaultTargetFormat = 'ps'
+let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_MultipleCompileFormats = 'ps'
+let g:Tex_ComplieRule_pdf = 'pdflatex --interaction=nonstopmode $*'
+let g:Tex_ComplieRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_ComplieRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
 "let g:Tex_FormatDependency_ps = 'dvi,ps'
 "let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+let g:Tex_ViewRule_pdf = 'evince'
+
 
 if has('gui_running')
    set guifont=Inconsolata\ for\ Powerline\ Medium\ 11
    "set guifont=Droid\ Sans\ Mono\ Powerline
    set wrap
+   set spell
 endif
