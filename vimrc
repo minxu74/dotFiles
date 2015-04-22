@@ -38,6 +38,10 @@ Plugin 'noahfrederick/vim-hemisu'
 "minibuf explor
 Plugin 'fholgado/minibufexpl.vim'
 
+"jedi
+Plugin 'davidhalter/jedi-vim'
+
+
 "latexsuite
 "Plugin 'vim-latex/vim-latex'
 
