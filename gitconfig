@@ -1,0 +1,13 @@
+[user]
+	name = Min Xu
+	email = minxu@climatemodeling.org
+[core]
+        editor = vim
+        diff = vimdiff
+        pager = less -r
+	excludesfile = /home/e4x/.gitignore_global
+[diff]
+        tool = p4merge
+[color]
+        ui = auto
+
