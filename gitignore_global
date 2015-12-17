@@ -40,6 +40,9 @@
 *.lg
 *.tmp
 *.xref
+*.fls
+*.tex~
+*.fdb_latexmk
 
 #beamer
 *.snm

@@ -43,7 +43,7 @@ Plugin 'davidhalter/jedi-vim'
 
 
 "latexsuite
-"Plugin 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 
 
 call vundle#end()            "required
@@ -191,4 +191,11 @@ if has('gui_running')
    "set guifont=Droid\ Sans\ Mono\ Powerline
    set wrap
    set spell
+   set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 endif
+
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.tex setlocal spell
+autocmd FileType gitcommit setlocal spell
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
