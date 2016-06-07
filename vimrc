@@ -1,3 +1,5 @@
+set nocompatible
+filetype off
 "mapping keys
 
 "F8   toggle the syntax under different backgrounds
@@ -6,11 +8,9 @@
 "F7   tag list
 
 
-set nocompatible
-filetype off
 
 "load vundle
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 " This is the Vundle package, which can be found on GitHub.
