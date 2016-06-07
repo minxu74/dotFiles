@@ -45,6 +45,10 @@ Plugin 'davidhalter/jedi-vim'
 "latexsuite
 "Plugin 'vim-latex/vim-latex'
 
+"for markdown preview
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 call vundle#end()            "required
 
@@ -85,6 +89,7 @@ noremap <F8> :Invbg<CR>
 
 " default is light one, so run once to change to dark
 "colorscheme hemisu
+Invbg
 Invbg
 
 "for programming
@@ -192,3 +197,16 @@ if has('gui_running')
    set wrap
    set spell
 endif
+
+"for markdown
+let vim_markdown_preview_browser="google-chrome"
+" change ctrl-p to ctrl-m
+let vim_markdown_preview_hotkey='<C-m>'
+"preview image ctrl-p
+let vim_markdown_preview_toggle=1 
+"display image automatically on buffer write.
+"let vim_markdown_preview_toggle=2
+"Use GitHub flavoured markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_use_xdg_open=1
+let g:vim_markdown_folding_disabled = 1
