@@ -2,4 +2,9 @@ Min Xu @ ORNL
 
 This directory contains all working environment files for UNIX/LINUX
 
+For install vim plugins, first need to clone vundle
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+then in vim, type "PluginInstall"
 
