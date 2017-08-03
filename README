@@ -8,3 +8,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 then in vim, type "PluginInstall"
 
+
+remove the font data as there are git repo has more fonts:
+
+https://github.com/powerline/fonts
