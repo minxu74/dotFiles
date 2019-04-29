@@ -1,0 +1,23 @@
+Host *.ornl.gov
+  ProxyCommand none
+Host *.resistance
+  ProxyCommand none
+Host localhost
+  ProxyCommand none
+HOST 128.219.*
+  ProxyCommand none
+Host 160.91.* 
+  ProxyCommand none
+Host cori.nersc.gov edison.nersc.gov
+  ControlMaster auto
+  ControlPath ~/.ssh/%r@%h:%p
+Match exec "hostname -I  |grep -F 160.91" Host *
+  ProxyCommand corkscrew snowman.ornl.gov 3128 %h %p
+  ServerAliveInterval 120 
+Host *
+  ProxyCommand none
+Host 128.219.186.*
+  IdentityFile ~/.ssh/xmtest.pem
+  ProxyCommand none
+
+

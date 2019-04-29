@@ -40,11 +40,11 @@ Plugin 'noahfrederick/vim-hemisu'
 Plugin 'fholgado/minibufexpl.vim'
 
 "jedi
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 
 "latexsuite
-"Plugin 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 
 "for markdown preview
 Plugin 'godlygeek/tabular'
