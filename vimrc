@@ -10,14 +10,15 @@ filetype off
 
 
 "load vundle
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
 " required!!!
-Plugin 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 "git plugins
 Plugin 'tpope/vim-fugitive'
@@ -39,19 +40,20 @@ Plugin 'noahfrederick/vim-hemisu'
 Plugin 'fholgado/minibufexpl.vim'
 
 "jedi
-"-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 
 "latexsuite
 Plugin 'vim-latex/vim-latex'
-
-"makedown syntax highlighting
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+<<<<<<< HEAD
 
 "geeknote plugins
 Plugin 'neilagabriel/vim-geeknote'
 
+"for markdown preview
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 call vundle#end()            "required
 
@@ -94,6 +96,7 @@ noremap <F9> :Geeknote<CR>
 
 " default is light one, so run once to change to dark
 "colorscheme hemisu
+Invbg
 Invbg
 
 "for programming
@@ -219,8 +222,6 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 
 " for markdown
-autocmd BufRead,BufNewFile *.mdown setlocal wrap spell spelllang=en_us
-autocmd BufRead,BufNewFile *.md setlocal wrap spell spelllang=en_us
 map <C-p> :w!<CR>:w!/home/minxu/tmp/vim-markdown.md<CR>:!pandoc -c /home/minxu/tmp/buttondown.css -s -f markdown -t html -o /home/minxu/tmp/vim-markdown.html /home/minxu/tmp/vim-markdown.md /home/minxu/tmp/metadata.yaml<CR>:!google-chrome /home/minxu/tmp/vim-markdown.html > /dev/null 2> /dev/null&<CR><CR>
 "map <C-p> :w!<CR>:w!/home/minxu/tmp/vim-markdown.md<CR>:!pandoc -s -f markdown -t html -o /home/minxu/tmp/vim-markdown.html /home/minxu/tmp/vim-markdown.md<CR>:!google-chrome /home/minxu/tmp/vim-markdown.html > /dev/null 2> /dev/null&<CR><CR>
 
@@ -229,3 +230,15 @@ map <C-p> :w!<CR>:w!/home/minxu/tmp/vim-markdown.md<CR>:!pandoc -c /home/minxu/t
 let g:vim_markdown_folding_disabled = 1
 
 
+"for markdown
+let vim_markdown_preview_browser="google-chrome"
+" change ctrl-p to ctrl-m
+let vim_markdown_preview_hotkey='<C-m>'
+"preview image ctrl-p
+let vim_markdown_preview_toggle=1 
+"display image automatically on buffer write.
+"let vim_markdown_preview_toggle=2
+"Use GitHub flavoured markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_use_xdg_open=1
+let g:vim_markdown_folding_disabled = 1

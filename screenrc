@@ -17,6 +17,22 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 #hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 
+# in order the tilte work, please unset PROMPT_COMMAND in your bashrc for screen terminal like
+
+#
+#-if [[ "$TERM" == screen* ]]; then
+#-  screen_set_window_title () {
+#-    local HPWD="$PWD"
+#-    case $HPWD in
+#-      $HOME) HPWD="~";;
+#-      $HOME/*) HPWD="~${HPWD#$HOME}";;
+#-    esac
+#-    printf '\ek%s\e\\' "$HPWD"
+#-  }
+#-  PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
+#-  unset PROMPT_COMMAND
+#-fi
+
 screen -t work 0
 screen -t test 1
 screen -t prog 2
