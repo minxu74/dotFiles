@@ -45,7 +45,6 @@ Plugin 'fholgado/minibufexpl.vim'
 
 "latexsuite
 Plugin 'vim-latex/vim-latex'
-<<<<<<< HEAD
 
 "geeknote plugins
 Plugin 'neilagabriel/vim-geeknote'
