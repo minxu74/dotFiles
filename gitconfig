@@ -5,7 +5,7 @@
         editor = vim
         diff = vimdiff
         pager = less -r
-	excludesfile = /home/e4x/.gitignore_global
+	excludesfile = /home/minxu/.gitignore_global
 [diff]
         tool = p4merge
 [color]
