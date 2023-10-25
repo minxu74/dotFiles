@@ -10,14 +10,16 @@ filetype off
 
 
 "load vundle
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
 " required!!!
-Plugin 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+
 
 "git plugins
 Plugin 'tpope/vim-fugitive'
@@ -39,7 +41,7 @@ Plugin 'noahfrederick/vim-hemisu'
 Plugin 'fholgado/minibufexpl.vim'
 
 "jedi
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 
 "latexsuite
@@ -48,12 +50,12 @@ Plugin 'davidhalter/jedi-vim'
 "for markdown preview
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+"Plugin 'JamshedVesuna/vim-markdown-preview'
 
 call vundle#end()            "required
 
 " required for vundle!
-filetype plugin indent on     
+"filetype plugin indent on     
 
 "reset map leader here
 let mapleader=";"
@@ -170,6 +172,8 @@ let g:Powerline_symbols='fancy'
 "some mapping
 "NerdTree
 nmap <Leader>fl :NERDTreeToggle<CR>
+
+nmap =j :%!python -m json.tool<CR>
 let NERDTreeWinSize=30
 "..NERDTree.....
 let NERDTreeWinPos="right"
