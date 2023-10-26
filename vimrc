@@ -46,6 +46,9 @@ Plugin 'davidhalter/jedi-vim'
 "latexsuite
 Plugin 'vim-latex/vim-latex'
 
+"geeknote plugins
+Plugin 'neilagabriel/vim-geeknote'
+
 "for markdown preview
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -90,6 +93,8 @@ function! ReverseBackground()
 endfunction
 command! Invbg call ReverseBackground()
 noremap <F8> :Invbg<CR>
+
+noremap <F9> :Geeknote<CR>
 
 " default is light one, so run once to change to dark
 "colorscheme hemisu
@@ -184,15 +189,21 @@ nnoremap <Leader>sp :Grep<CR>
 nnoremap <Leader>gs <C-W><C-W>
 
 "latexsuite settings
+"-let g:tex_flavor='xelatex'
+let g:tex_flavor='pdflatex'
 "let g:Tex_DefaultTargetFormat = 'ps'
 let g:Tex_DefaultTargetFormat = 'pdf'
 "let g:Tex_MultipleCompileFormats = 'ps'
-let g:Tex_ComplieRule_pdf = 'pdflatex --interaction=nonstopmode $*'
-let g:Tex_ComplieRule_dvi = 'latex --interaction=nonstopmode $*'
-let g:Tex_ComplieRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
+let g:Tex_ComplieRule_pdf = 'pdflatex --interaction=nonstopmode -halt-on-error $*'
+"let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
 "let g:Tex_FormatDependency_ps = 'dvi,ps'
 "let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 let g:Tex_ViewRule_pdf = 'evince'
+"-let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf='pdflatex --interaction=nonstopmode $*'
+"let g:Tex_IgnoreLevel = 7
+let  g:Tex_GotoError = 0
 
 
 if has('gui_running')
@@ -200,8 +211,27 @@ if has('gui_running')
    "set guifont=Droid\ Sans\ Mono\ Powerline
    Invbg
    set wrap
-   set spell
+   set spell spelllang=en_us
+   set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+   set wildchar=<Tab> wildmenu wildmode=full
 endif
+
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
+"min xu comment out on Aug.5 2016, becuaase it seems that bad spell not show
+"hi clear SpellBad
+"hi SpellBad cterm=underline,bold ctermfg=red
+
+
+" for markdown
+map <C-p> :w!<CR>:w!/home/minxu/tmp/vim-markdown.md<CR>:!pandoc -c /home/minxu/tmp/buttondown.css -s -f markdown -t html -o /home/minxu/tmp/vim-markdown.html /home/minxu/tmp/vim-markdown.md /home/minxu/tmp/metadata.yaml<CR>:!google-chrome /home/minxu/tmp/vim-markdown.html > /dev/null 2> /dev/null&<CR><CR>
+"map <C-p> :w!<CR>:w!/home/minxu/tmp/vim-markdown.md<CR>:!pandoc -s -f markdown -t html -o /home/minxu/tmp/vim-markdown.html /home/minxu/tmp/vim-markdown.md<CR>:!google-chrome /home/minxu/tmp/vim-markdown.html > /dev/null 2> /dev/null&<CR><CR>
+
+
+"highlighting
+let g:vim_markdown_folding_disabled = 1
+
 
 "for markdown
 let vim_markdown_preview_browser="google-chrome"
