@@ -49,7 +49,7 @@ Plugin 'vim-latex/vim-latex'
 "for markdown preview
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+"Plugin 'JamshedVesuna/vim-markdown-preview'
 
 "for json
 Plugin 'elzr/vim-json'
@@ -57,7 +57,7 @@ Plugin 'elzr/vim-json'
 call vundle#end()            "required
 
 " required for vundle!
-filetype plugin indent on     
+"filetype plugin indent on     
 
 "reset map leader here
 let mapleader=";"
@@ -173,6 +173,8 @@ let g:Powerline_symbols='fancy'
 "some mapping
 "NerdTree
 nmap <Leader>fl :NERDTreeToggle<CR>
+
+nmap =j :%!python -m json.tool<CR>
 let NERDTreeWinSize=30
 "..NERDTree.....
 let NERDTreeWinPos="right"
