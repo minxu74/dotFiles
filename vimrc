@@ -40,7 +40,7 @@ Plugin 'noahfrederick/vim-hemisu'
 Plugin 'fholgado/minibufexpl.vim'
 
 "jedi
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 
 "latexsuite
@@ -53,6 +53,9 @@ Plugin 'neilagabriel/vim-geeknote'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
+
+"for json
+Plugin 'elzr/vim-json'
 
 call vundle#end()            "required
 
@@ -206,8 +209,9 @@ let  g:Tex_GotoError = 0
 
 
 if has('gui_running')
-   set guifont=Inconsolata\ for\ Powerline\ Medium\ 11
+   "set guifont=Inconsolata\ for\ Powerline\ Medium\ 11
    "set guifont=Droid\ Sans\ Mono\ Powerline
+   Invbg
    set wrap
    set spell spelllang=en_us
    set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -243,3 +247,10 @@ let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
 let vim_markdown_preview_use_xdg_open=1
 let g:vim_markdown_folding_disabled = 1
+
+
+"for diff files
+if &diff
+   colorscheme molokai
+endif
+
