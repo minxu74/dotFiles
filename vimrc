@@ -46,9 +46,6 @@ Plugin 'davidhalter/jedi-vim'
 "latexsuite
 Plugin 'vim-latex/vim-latex'
 
-"geeknote plugins
-Plugin 'neilagabriel/vim-geeknote'
-
 "for markdown preview
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -73,8 +70,6 @@ let g:leave_my_textwidth_alone=1
 "set helplang=cn
 set encoding=utf-8
 
-" paste mode
-set paste
 
 " can we automaticlly set the background 
 set completeopt=longest,menu
@@ -112,7 +107,6 @@ set t_Co=256
 
 "fortran
 
-set paste
 set ruler
 "
 "highlight search result
@@ -252,3 +246,5 @@ if &diff
    colorscheme molokai
 endif
 
+" paste mode
+set paste

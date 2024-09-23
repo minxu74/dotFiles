@@ -33,6 +33,8 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 #-  unset PROMPT_COMMAND
 #-fi
 
-screen -t work 0
-screen -t test 1
-screen -t prog 2
+screen -t work  
+screen -t test  
+screen -t prog  
+
+select 0
