@@ -34,7 +34,8 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree.git'
 
 "color scheme
-Plugin 'noahfrederick/vim-hemisu'
+"Plugin 'noahfrederick/vim-hemisu'
+Plugin 'morhetz/gruvbox'
 
 "minibuf explor
 Plugin 'fholgado/minibufexpl.vim'
@@ -52,7 +53,7 @@ Plugin 'plasticboy/vim-markdown'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
 
 "for json
-Plugin 'elzr/vim-json'
+"Plugin 'elzr/vim-json'
 
 call vundle#end()            "required
 
@@ -95,6 +96,8 @@ noremap <F9> :Geeknote<CR>
 "colorscheme hemisu
 Invbg
 Invbg
+
+autocmd vimenter * ++nested colorscheme gruvbox
 
 "for programming
 syntax on
