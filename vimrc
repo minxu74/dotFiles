@@ -97,7 +97,8 @@ noremap <F9> :Geeknote<CR>
 Invbg
 Invbg
 
-autocmd vimenter * ++nested colorscheme gruvbox
+autocmd vimenter * nested colorscheme gruvbox
+
 
 "for programming
 syntax on
