@@ -47,6 +47,9 @@ Plugin 'davidhalter/jedi-vim'
 "latexsuite
 Plugin 'vim-latex/vim-latex'
 
+"
+Plugin 'gergap/vim-ollama'
+
 "for markdown preview
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -253,4 +256,7 @@ if &diff
 endif
 
 " paste mode
-set paste
+"set paste
+if exists('g:ollama_completion_stop')
+  let g:ollama_completion_stop = ["\n", "###"]
+endif
